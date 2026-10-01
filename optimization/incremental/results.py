@@ -1,0 +1,49 @@
+"""Resultados de uma simulação: por período e agregados no horizonte."""
+
+from dataclasses import asdict, dataclass
+
+
+@dataclass(frozen=True)
+class PeriodResult:
+    period: int
+    n_active_pods: int
+    n_new_pods: int
+    n_nodes_open: int
+    cost: float
+    infra_cost: float
+    disruption_cost: float
+    pending_cost: float
+    time_ms: float
+    scheduler_time_ms: float
+    descheduler_time_ms: float
+    migrations: int
+    evictions: int
+    pending_pods: int
+
+
+class HorizonResult:
+    """Coleção de PeriodResult com os totais do horizonte. total_cost é a
+    soma de C_t e se divide em infra + disrupção + Pending. migrations (pods
+    do período anterior que terminam em outro nó) é só informativo: a
+    disrupção cobrada é por evicção."""
+
+    def __init__(self, periods: list):
+        self.periods = periods
+
+    def _sum(self, field_name: str):
+        return sum(getattr(period, field_name) for period in self.periods)
+
+    def to_dict(self) -> dict:
+        return {
+            "results_per_period": [asdict(period) for period in self.periods],
+            "total_cost": self._sum("cost"),
+            "total_infra_cost": self._sum("infra_cost"),
+            "total_disruption_cost": self._sum("disruption_cost"),
+            "total_pending_cost": self._sum("pending_cost"),
+            "total_time_ms": self._sum("time_ms"),
+            "total_scheduler_time_ms": self._sum("scheduler_time_ms"),
+            "total_descheduler_time_ms": self._sum("descheduler_time_ms"),
+            "total_migrations": self._sum("migrations"),
+            "total_evictions": self._sum("evictions"),
+            "total_pending_pods": self._sum("pending_pods"),
+        }
