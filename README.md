@@ -88,7 +88,7 @@ Fatorial: 3 Schedulers × 5 Deschedulers com limite de K = 10 evicções por per
 - **Implantáveis**: `least_requested` e `greedy` × todos os Deschedulers.
 - **Referência**: todas as combinações com Scheduler `milp`. Esse Scheduler resolve a fila inteira de pods de cada período com o solver, o que não cabe no tempo de decisão de um scheduler real. Ele serve como limite superior: mostra o que um Scheduler quase ótimo conseguiria e, comparado ao `greedy`, quanto a heurística deixa de ganhar. O `milp+milp` (Scheduler e Descheduler ótimos em cada período) é a melhor configuração possível nesse sentido, mas não é uma proposta para produção.
 
-Varreduras opcionais, cada combinação em um CSV próprio (`results/factorial_lam<λ>_omega<f>_margin<m>_cost-<modelo>.csv`) com uma tabela comparativa no final:
+Varreduras opcionais, cada combinação em um CSV próprio (`results/dados/factorial_lam<λ>_omega<f>_margin<m>_cost-<modelo>.csv`) com uma tabela comparativa no final:
 
 - `--lam`: peso da fragmentação.
 - `--omega-fraction`: ω = F × `c_i` médio. A fronteira **custo de nós × evicções** (colunas `node_cost` e `evictions`) não depende da escala de ω, então a varredura mostra se a conclusão vale só para um ω. Use `--sizes 10x100 20x200` para limitar os tamanhos.
@@ -149,10 +149,13 @@ examples/demo.py                 # todas as combinações em uma instância
 tests/test_objective.py          # testes unitários da f.o. e dos MILPs
 tests/test_simulation_invariants.py  # capacidade, limite K, evicção única e admissão por ciclo
 results/
-└── factorial_lam<λ>_omega<f>_margin<m>_cost-<modelo>.csv   # um por combinação; uma linha por instância × configuração
+├── README.md                    # qual arquivo corresponde a qual execução
+├── dados/                       # factorial_lam<λ>_omega<f>_margin<m>_cost-<modelo>.csv: um por combinação; uma linha por instância × configuração
+├── analises/                    # saídas de --analyze guardadas em texto
+└── logs/                        # baseline/, omega/, lambda/, folga_e_custo/ e cadeias/
 ```
 
-Os CSVs são gerados pela execução dos experimentos.
+Os CSVs são gerados pela execução dos experimentos; `results/README.md` lista as execuções e os arquivos de cada uma.
 
 ## Instâncias
 
@@ -173,7 +176,7 @@ pip install gurobipy scipy
 # Exemplo rápido: todas as combinações numa instância com 10 nós e 50 pods
 python -m examples.demo
 
-# Bateria completa: fatorial + análise → results/*.csv (a partir da raiz)
+# Bateria completa: fatorial + análise → results/dados/*.csv (a partir da raiz)
 python -m experiments
 
 # Varreduras (tabela comparativa no final) e variantes da instância
@@ -204,9 +207,9 @@ A bateria completa pode levar horas. Para rodar sem prender o terminal, em segun
 $env:PYTHONIOENCODING = "utf-8"
 Start-Process python -ArgumentList "-u","-m","experiments" `
   -WorkingDirectory (Get-Location) -WindowStyle Hidden `
-  -RedirectStandardOutput results\run.log -RedirectStandardError results\run.err
+  -RedirectStandardOutput results\logs\baseline\run.log -RedirectStandardError results\logs\baseline\run.err
 
-Get-Content results\run.log -Wait -Tail 20   # acompanhar
+Get-Content results\logs\baseline\run.log -Wait -Tail 20   # acompanhar
 Stop-Process -Name python                     # parar (o mesmo comando retoma)
 ```
 
@@ -214,12 +217,12 @@ Suspender o computador pausa a execução (`powercfg /change standby-timeout-ac 
 
 ## Resultados
 
-Bateria de 7 a 9 de outubro de 2026. Todos os números abaixo vêm dos CSVs em `results/` (os logs estão em `results/logs/`) e podem ser reproduzidos com `python -m experiments --analyze` (acrescente os mesmos parâmetros e `--sizes` da execução).
+Bateria de 7 a 11 de outubro de 2026. Todos os números abaixo vêm dos CSVs em `results/dados/` (os logs estão em `results/logs/` e a análise da varredura de ω em `results/analises/`) e podem ser reproduzidos com `python -m experiments --analyze` (acrescente os mesmos parâmetros e `--sizes` da execução). A análise só é impressa no terminal; para guardá-la, redirecione a saída (`... | Out-File -Encoding utf8 results\analises\arquivo.txt`). O arquivo `results/README.md` diz qual log e qual CSV pertence a cada execução.
 
 | Execução | Parâmetros | Tamanhos | Instâncias |
 |---|---|---|---|
 | Baseline | λ = 1, ω = 0,5 × c médio, folga 1,1, custo de Martins | os 11 | 110 × 15 configurações |
-| Varredura de ω | ω = F × c médio, F ∈ {0, 0,25, 0,5, 1, 2} | 10×100, 20×200, 20×500 | 30 × 15 por valor |
+| Varredura de ω | ω = F × c médio, F ∈ {0, 0,25, 0,5, 1, 2} | os 11 | 110 × 15 por valor |
 | Varredura de λ | λ ∈ {0, 1, 2, 5} | 10×100, 20×200, 20×500 | 30 × 15 por valor |
 | Folga 1,6 | sem pods Pending | 10×100, 20×200, 20×500 | 30 × 15 |
 | Custo proporcional | `c_i` proporcional à capacidade | 10×100, 20×200, 20×500 | 30 × 15 |
@@ -254,17 +257,43 @@ Depois da correção, mesmo com RCL totalmente aleatória (`rcl_alpha = 1`) e 30
 
 ### Varredura de ω (o resultado depende dele)
 
-Custo de nós e evicções médios (30 instâncias), `GR+none` = 9.912 nós e 0 evicções para qualquer ω:
+Custo de nós e evicções médios sobre as 110 instâncias dos 11 tamanhos (a média de nós é dominada pelos clusters grandes), com `GR+none` = 76.050 nós e 0 evicções para qualquer ω:
 
 | ω (× c médio) | `GR+ls_best` | `GR+milp` | `MS+milp` (ref.) |
 |---|---|---|---|
-| 0 | 8.495 nós / 31 evic. | 4.815 / 178 | 4.694 / 162 |
-| 0,25 | 8.682 / 6,8 | 5.731 / 35 | 5.910 / 32 |
-| 0,5 | 8.758 / 5,5 | 7.311 / 13 | 7.834 / 11 |
-| 1 | 8.905 / 3,7 | 8.794 / 4,2 | 9.326 / 2,5 |
-| 2 | 9.839 / 0,2 | 9.865 / 0,2 | 9.904 / 0,1 |
+| 0 | 61.754 nós / 64 evic. | 41.686 / 189 | 40.519 / 176 |
+| 0,25 | 63.159 / 19 | 43.761 / 67 | 43.578 / 62 |
+| 0,5 | 63.505 / 15 | 51.524 / 34 | 52.472 / 30 |
+| 1 | 65.267 / 11 | 64.502 / 11 | 65.446 / 9,7 |
+| 2 | 75.273 / 0,6 | 75.309 / 0,6 | 75.695 / 0,5 |
 
-Com ω = 0 o Descheduler MILP corta quase metade do custo de nós (−51%) à custa de 178 evicções por instância. Com ω = 2 o ganho de qualquer Descheduler cai a menos de 1% (9.839 e 9.865 contra 9.912 sem Descheduler), porque quase nada vale a evicção. Ou seja, **a conclusão "o Descheduler ajuda" vale conforme o custo da evicção**; a fronteira acima é o resultado que não depende de um ω arbitrário. A ordem das configurações não muda entre os ω testados.
+Redução do custo de nós contra `GR+none`:
+
+| ω (× c médio) | `GR+ls_best` | `GR+milp` |
+|---|---|---|
+| 0 | −18,8% | −45,2% |
+| 0,25 | −16,9% | −42,5% |
+| 0,5 | −16,5% | −32,3% |
+| 1 | −14,2% | −15,2% |
+| 2 | −1,0% | −1,0% |
+
+Com ω = 0 o Descheduler MILP corta 45% do custo de nós à custa de 189 evicções por instância (com os 3 tamanhos pequenos eram −51% e 178). Com ω = 2 o ganho de qualquer Descheduler cai a 1%, porque quase nada vale a evicção. Ou seja, **a conclusão "o Descheduler ajuda" vale conforme o custo da evicção**; a fronteira acima é o resultado que não depende de um ω arbitrário.
+
+**A classificação também depende de ω** (Friedman e Wilcoxon-Holm, 110 instâncias; rank médio entre parênteses):
+
+| ω | Implantáveis: melhor | Quem empata com ele | Referência (com `MS+milp`): melhor |
+|---|---|---|---|
+| 0 | `GR+milp` (1,45) | ninguém; `GR+grasp` (2,58) e `GR+ls_best` (2,67) são significativamente piores | `MS+milp` (1,28); `GR+milp` (3,35) é significativamente pior |
+| 0,25 | `GR+milp` (1,00) | ninguém; `GR+grasp` (2,79) e `GR+ls_best` (2,81) são significativamente piores | `MS+milp` (1,46); `GR+milp` (2,56) é significativamente pior (p = 0,029) |
+| 0,5 | `GR+milp` (1,14) | ninguém | `MS+milp` (2,00); `GR+milp` (2,70) empata (p = 0,16) |
+| 1 | `GR+ls_best` (2,50) | `GR+grasp`, `GR+milp` (2,54), `GR+ls_first` | `MS+milp` (4,07); empata com `MS+ls_*`, `MS+grasp` e todos os `GR+` exceto `GR+none` |
+| 2 | `GR+ls_first` (2,88) | `GR+ls_best`, `GR+grasp`, `GR+milp` (2,95) | `MS+ls_best` (4,59); empata com `MS+milp` e os `GR+` |
+
+- Com evicção barata (ω ≤ 0,5) o Descheduler MILP é claramente o melhor entre os implantáveis; com ω = 0,25 ele fica em primeiro lugar em todas as instâncias (rank 1,00). A partir de ω = 1 ele deixa de se distinguir da busca local, e com ω = 2 os três Descheduler heurísticos e o MILP empatam.
+- Contra a referência `MS+milp`, `GR+milp` é significativamente pior em ω = 0 e 0,25, empata em ω = 0,5 (p = 0,16) e fica estatisticamente igual a partir de ω = 1. Como a diferença em ω = 0,25 é pequena (p = 0,029 após Holm), não leia o empate em ω = 0,5 como tendência monótona.
+- `GR+none` é sempre significativamente pior que os `GR+` com Descheduler (rank 4,93 / 5,02 / 5,00 / 5,03 / 3,60 para ω = 0 / 0,25 / 0,5 / 1 / 2), mas a diferença encolhe com ω = 2 (p = 4,7e-6).
+- Com `least_requested`, os Descheduler heurísticos só mudam a classificação com ω = 0 (rank 6,85 a 7,75 contra 9,15 de `LR+none`); com ω ≥ 0,25 a diferença é pequena (7,40 a 7,98 em ω = 0,25 e 7,39 a 7,93 em ω = 0,5). `LR+milp` é o último dos implantáveis em ω = 0,25, 0,5, 1 e 2 (9,57 / 9,45 / 9,17 / 8,74); em ω = 0 o último é `LR+none` (9,15 contra 9,03). Suas evicções caem com ω (199 / 176 / 133 / 73 / 21 por instância), mas ficam muito acima das de `GR+milp` em ω ≥ 0,25 (67 / 34 / 11 / 0,6).
+- O `GR+milp` com ω = 0 aumenta a fragmentação (3,18% contra 2,72% de `GR+none`) e leva a utilização a 0,91, porque as evicções gratuitas compactam os nós além do que a penalidade λ desconta. Com ω = 0,25 a utilização é 0,86 e a fragmentação 3,05%.
 
 ### Varredura de λ
 
@@ -286,6 +315,6 @@ Com λ = 0 o guloso fragmenta 3,2× mais (2,40% contra 0,74%); com λ = 1 ele j�
 
 ### Ressalvas
 
-- As varreduras usam só 30 instâncias nos três tamanhos menores; o baseline usa os 11 tamanhos.
+- A varredura de ω usa os 11 tamanhos (110 instâncias por valor). As varreduras de λ, a folga 1,6 e o custo proporcional usam só 30 instâncias nos três tamanhos menores (10×100, 20×200, 20×500); o baseline usa os 11 tamanhos. Esses resultados podem não valer para clusters de 50 a 100 nós.
 - Os tempos nos CSVs incluem períodos em que o computador pode ter ficado sem rede ou suspenso (a cadeia foi interrompida e retomada), então use `time_ms` com cautela.
 - Os MILPs têm limite de 60 s e gap de 1%; execuções com o mesmo plano podem diferir um pouco.

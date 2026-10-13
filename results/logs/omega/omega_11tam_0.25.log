@@ -1,0 +1,457 @@
+Fatorial Scheduler x Descheduler (N_RUNS=10, K=10 evicções/período, lambda=1, omega=0.25*c, folga=1.1, custo=martins)
+[retomando: 450 linhas já existentes em C:\Users\saira\OneDrive\Documentos\tcc\k8s-rescheduling-optimization\experiments\..\results\factorial_lam1_omega0.25_margin1.1_cost-martins.csv]
+
+=== N=10 nós, P=50 pods ===
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2679381
+Academic license 2679381 - for non-commercial use only - registered to be___@poli.ufrj.br
+  run 1/10 (seed=100) [16.2s] custo/migrações: least_requested+none=4802/0, least_requested+ls_first=4802/0, least_requested+ls_best=4802/0, least_requested+grasp=4802/0, least_requested+milp=5393/82, greedy+none=4008/0, greedy+ls_first=3106/8, greedy+ls_best=3169/6, greedy+grasp=3169/6, greedy+milp=2837/23, milp+none=3758/0, milp+ls_first=2787/6, milp+ls_best=2787/6, milp+grasp=2787/6, milp+milp=2583/17
+  run 2/10 (seed=101) [10.9s] custo/migrações: least_requested+none=4819/0, least_requested+ls_first=4710/2, least_requested+ls_best=4710/2, least_requested+grasp=4710/2, least_requested+milp=5509/57, greedy+none=2315/0, greedy+ls_first=2356/4, greedy+ls_best=2202/5, greedy+grasp=2202/5, greedy+milp=1928/14, milp+none=2344/0, milp+ls_first=2118/7, milp+ls_best=2118/7, milp+grasp=2118/7, milp+milp=1686/22
+  run 3/10 (seed=102) [21.0s] custo/migrações: least_requested+none=3860/0, least_requested+ls_first=3865/1, least_requested+ls_best=3865/1, least_requested+grasp=3865/1, least_requested+milp=4500/57, greedy+none=3463/0, greedy+ls_first=2650/5, greedy+ls_best=2565/6, greedy+grasp=2565/6, greedy+milp=2315/16, milp+none=3088/0, milp+ls_first=2367/14, milp+ls_best=2386/9, milp+grasp=2386/9, milp+milp=2194/14
+  run 4/10 (seed=103) [13.8s] custo/migrações: least_requested+none=4664/0, least_requested+ls_first=4664/0, least_requested+ls_best=4664/0, least_requested+grasp=4664/0, least_requested+milp=5473/64, greedy+none=2723/0, greedy+ls_first=1882/10, greedy+ls_best=1686/9, greedy+grasp=1686/9, greedy+milp=1529/15, milp+none=3172/0, milp+ls_first=2255/6, milp+ls_best=2285/5, milp+grasp=2285/5, milp+milp=1503/19
+  run 5/10 (seed=104) [13.0s] custo/migrações: least_requested+none=5250/0, least_requested+ls_first=5250/1, least_requested+ls_best=5250/1, least_requested+grasp=5250/1, least_requested+milp=5829/52, greedy+none=4295/0, greedy+ls_first=3040/8, greedy+ls_best=2868/14, greedy+grasp=2868/14, greedy+milp=2653/16, milp+none=4490/0, milp+ls_first=3229/12, milp+ls_best=3260/11, milp+grasp=3260/11, milp+milp=2597/20
+  run 6/10 (seed=105) [10.7s] custo/migrações: least_requested+none=5203/0, least_requested+ls_first=5203/0, least_requested+ls_best=5203/0, least_requested+grasp=5203/0, least_requested+milp=5851/62, greedy+none=3958/0, greedy+ls_first=3630/11, greedy+ls_best=3612/11, greedy+grasp=3612/11, greedy+milp=3326/22, milp+none=3950/0, milp+ls_first=3467/8, milp+ls_best=3467/8, milp+grasp=3467/8, milp+milp=3166/24
+  run 7/10 (seed=106) [13.5s] custo/migrações: least_requested+none=5555/0, least_requested+ls_first=5541/1, least_requested+ls_best=5556/1, least_requested+grasp=5556/1, least_requested+milp=6431/65, greedy+none=3466/0, greedy+ls_first=2233/7, greedy+ls_best=1882/7, greedy+grasp=1882/7, greedy+milp=1650/11, milp+none=2277/0, milp+ls_first=2068/3, milp+ls_best=2068/3, milp+grasp=2068/3, milp+milp=1501/8
+  run 8/10 (seed=107) [56.0s] custo/migrações: least_requested+none=4769/0, least_requested+ls_first=4769/0, least_requested+ls_best=4769/0, least_requested+grasp=4769/0, least_requested+milp=5513/70, greedy+none=4068/0, greedy+ls_first=3205/10, greedy+ls_best=3023/9, greedy+grasp=3023/9, greedy+milp=2350/21, milp+none=3145/0, milp+ls_first=2708/13, milp+ls_best=2598/9, milp+grasp=2598/9, milp+milp=2209/21
+  run 9/10 (seed=108) [121.8s] custo/migrações: least_requested+none=3717/0, least_requested+ls_first=3541/1, least_requested+ls_best=3541/1, least_requested+grasp=3541/1, least_requested+milp=4202/62, greedy+none=1329/0, greedy+ls_first=1239/6, greedy+ls_best=1236/5, greedy+grasp=1236/5, greedy+milp=1059/12, milp+none=1558/0, milp+ls_first=1074/5, milp+ls_best=1071/5, milp+grasp=1071/5, milp+milp=1004/13
+  run 10/10 (seed=109) [22.4s] custo/migrações: least_requested+none=4307/0, least_requested+ls_first=4307/0, least_requested+ls_best=4307/0, least_requested+grasp=4307/0, least_requested+milp=5230/82, greedy+none=3250/0, greedy+ls_first=2949/9, greedy+ls_best=2669/8, greedy+grasp=2669/8, greedy+milp=2243/20, milp+none=3738/0, milp+ls_first=2777/8, milp+ls_best=2755/6, milp+grasp=2755/6, milp+milp=2134/16
+
+=== N=10 nós, P=100 pods ===
+
+=== N=10 nós, P=200 pods ===
+  run 1/10 (seed=100) [7.4s] custo/migrações: least_requested+none=4190/0, least_requested+ls_first=4190/0, least_requested+ls_best=4190/0, least_requested+grasp=4190/0, least_requested+milp=4771/48, greedy+none=3374/0, greedy+ls_first=3078/4, greedy+ls_best=3078/4, greedy+grasp=3078/4, greedy+milp=2497/15, milp+none=3109/0, milp+ls_first=2972/2, milp+ls_best=2972/2, milp+grasp=2972/2, milp+milp=2404/9
+  run 2/10 (seed=101) [9.4s] custo/migrações: least_requested+none=4267/0, least_requested+ls_first=4267/0, least_requested+ls_best=4267/0, least_requested+grasp=4267/0, least_requested+milp=4966/28, greedy+none=3449/0, greedy+ls_first=3309/3, greedy+ls_best=3309/3, greedy+grasp=3309/3, greedy+milp=2305/15, milp+none=3385/0, milp+ls_first=3058/4, milp+ls_best=3058/4, milp+grasp=3058/4, milp+milp=2486/16
+  run 3/10 (seed=102) [8.5s] custo/migrações: least_requested+none=3646/0, least_requested+ls_first=3646/0, least_requested+ls_best=3646/0, least_requested+grasp=3646/0, least_requested+milp=4236/47, greedy+none=3224/0, greedy+ls_first=3111/3, greedy+ls_best=3111/3, greedy+grasp=3111/3, greedy+milp=2219/25, milp+none=3633/0, milp+ls_first=3152/4, milp+ls_best=3152/4, milp+grasp=3152/4, milp+milp=1998/18
+  run 4/10 (seed=103) [12.1s] custo/migrações: least_requested+none=4268/0, least_requested+ls_first=4268/0, least_requested+ls_best=4268/0, least_requested+grasp=4268/0, least_requested+milp=5038/69, greedy+none=4034/0, greedy+ls_first=3845/3, greedy+ls_best=3845/3, greedy+grasp=3845/3, greedy+milp=2535/17, milp+none=4258/0, milp+ls_first=4040/3, milp+ls_best=4040/3, milp+grasp=4040/3, milp+milp=2693/25
+  run 5/10 (seed=104) [10.6s] custo/migrações: least_requested+none=4668/0, least_requested+ls_first=4668/0, least_requested+ls_best=4668/0, least_requested+grasp=4668/0, least_requested+milp=5586/58, greedy+none=3029/0, greedy+ls_first=2874/3, greedy+ls_best=2874/3, greedy+grasp=2874/3, greedy+milp=2098/11, milp+none=2975/0, milp+ls_first=2908/2, milp+ls_best=2908/2, milp+grasp=2908/2, milp+milp=2294/12
+  run 6/10 (seed=105) [8.6s] custo/migrações: least_requested+none=4621/0, least_requested+ls_first=4621/0, least_requested+ls_best=4621/0, least_requested+grasp=4621/0, least_requested+milp=5415/49, greedy+none=4061/0, greedy+ls_first=3684/5, greedy+ls_best=3684/5, greedy+grasp=3684/5, greedy+milp=2956/17, milp+none=4404/0, milp+ls_first=4134/4, milp+ls_best=3613/4, milp+grasp=3613/4, milp+milp=2690/18
+  run 7/10 (seed=106) [8.3s] custo/migrações: least_requested+none=5065/0, least_requested+ls_first=5065/0, least_requested+ls_best=5065/0, least_requested+grasp=5065/0, least_requested+milp=6029/39, greedy+none=3487/0, greedy+ls_first=3245/3, greedy+ls_best=3245/3, greedy+grasp=3245/3, greedy+milp=2356/19, milp+none=3520/0, milp+ls_first=3460/1, milp+ls_best=3460/1, milp+grasp=3460/1, milp+milp=2644/14
+  run 8/10 (seed=107) [12.0s] custo/migrações: least_requested+none=4415/0, least_requested+ls_first=4415/0, least_requested+ls_best=4415/0, least_requested+grasp=4415/0, least_requested+milp=5208/53, greedy+none=4375/0, greedy+ls_first=3833/4, greedy+ls_best=3833/4, greedy+grasp=3833/4, greedy+milp=2863/21, milp+none=3742/0, milp+ls_first=3560/4, milp+ls_best=3560/4, milp+grasp=3560/4, milp+milp=2989/17
+  run 9/10 (seed=108) [11.8s] custo/migrações: least_requested+none=3351/0, least_requested+ls_first=3351/0, least_requested+ls_best=3351/0, least_requested+grasp=3351/0, least_requested+milp=4012/38, greedy+none=2625/0, greedy+ls_first=2189/3, greedy+ls_best=2189/3, greedy+grasp=2189/3, greedy+milp=1465/13, milp+none=2156/0, milp+ls_first=2037/3, milp+ls_best=2037/3, milp+grasp=2037/3, milp+milp=1783/11
+  run 10/10 (seed=109) [8.6s] custo/migrações: least_requested+none=4259/0, least_requested+ls_first=4259/0, least_requested+ls_best=4259/0, least_requested+grasp=4259/0, least_requested+milp=4931/38, greedy+none=4151/0, greedy+ls_first=3961/3, greedy+ls_best=3961/3, greedy+grasp=3961/3, greedy+milp=2761/17, milp+none=4221/0, milp+ls_first=3833/3, milp+ls_best=3833/3, milp+grasp=3833/3, milp+milp=2973/17
+
+=== N=20 nós, P=100 pods ===
+  run 1/10 (seed=100) [335.9s] custo/migrações: least_requested+none=16000/0, least_requested+ls_first=15984/1, least_requested+ls_best=15984/1, least_requested+grasp=15984/1, least_requested+milp=17986/108, greedy+none=9927/0, greedy+ls_first=7470/21, greedy+ls_best=6993/16, greedy+grasp=6993/16, greedy+milp=5210/32, milp+none=9687/0, milp+ls_first=7522/12, milp+ls_best=7760/15, milp+grasp=7641/16, milp+milp=4963/37
+  run 2/10 (seed=101) [105.7s] custo/migrações: least_requested+none=16822/0, least_requested+ls_first=16740/3, least_requested+ls_best=16749/3, least_requested+grasp=16749/3, least_requested+milp=18401/129, greedy+none=10265/0, greedy+ls_first=8882/22, greedy+ls_best=8231/11, greedy+grasp=8231/11, greedy+milp=6303/32, milp+none=11018/0, milp+ls_first=8054/16, milp+ls_best=8389/14, milp+grasp=8389/14, milp+milp=6067/34
+  run 3/10 (seed=102) [77.2s] custo/migrações: least_requested+none=16876/0, least_requested+ls_first=16946/5, least_requested+ls_best=16788/6, least_requested+grasp=16788/6, least_requested+milp=19042/110, greedy+none=9137/0, greedy+ls_first=8083/14, greedy+ls_best=7289/12, greedy+grasp=7289/12, greedy+milp=6581/28, milp+none=9377/0, milp+ls_first=7736/16, milp+ls_best=7889/15, milp+grasp=7889/15, milp+milp=6333/36
+  run 4/10 (seed=103) [340.3s] custo/migrações: least_requested+none=14814/0, least_requested+ls_first=14162/6, least_requested+ls_best=14562/4, least_requested+grasp=14562/4, least_requested+milp=16040/111, greedy+none=9852/0, greedy+ls_first=7108/17, greedy+ls_best=6756/16, greedy+grasp=6756/16, greedy+milp=4158/33, milp+none=8140/0, milp+ls_first=6290/13, milp+ls_best=6290/13, milp+grasp=6290/13, milp+milp=3667/33
+  run 5/10 (seed=104) [344.8s] custo/migrações: least_requested+none=18768/0, least_requested+ls_first=18505/5, least_requested+ls_best=18335/5, least_requested+grasp=18335/5, least_requested+milp=20675/115, greedy+none=11790/0, greedy+ls_first=9220/16, greedy+ls_best=8871/17, greedy+grasp=8871/17, greedy+milp=6607/43, milp+none=11284/0, milp+ls_first=7395/16, milp+ls_best=7679/14, milp+grasp=8031/15, milp+milp=6213/47
+  run 6/10 (seed=105) [47.3s] custo/migrações: least_requested+none=18382/0, least_requested+ls_first=18227/3, least_requested+ls_best=18156/3, least_requested+grasp=18156/3, least_requested+milp=20099/116, greedy+none=13163/0, greedy+ls_first=10931/19, greedy+ls_best=9859/18, greedy+grasp=9586/19, greedy+milp=8660/48, milp+none=12693/0, milp+ls_first=11020/16, milp+ls_best=10615/13, milp+grasp=10615/13, milp+milp=8099/42
+  run 7/10 (seed=106) [130.2s] custo/migrações: least_requested+none=18475/0, least_requested+ls_first=18188/7, least_requested+ls_best=18175/6, least_requested+grasp=18175/6, least_requested+milp=20791/104, greedy+none=9768/0, greedy+ls_first=6455/10, greedy+ls_best=6624/10, greedy+grasp=6624/10, greedy+milp=4325/32, milp+none=9563/0, milp+ls_first=6507/11, milp+ls_best=5957/12, milp+grasp=5957/12, milp+milp=4178/31
+  run 8/10 (seed=107) [343.1s] custo/migrações: least_requested+none=18046/0, least_requested+ls_first=17533/3, least_requested+ls_best=17533/3, least_requested+grasp=17533/3, least_requested+milp=20707/135, greedy+none=13245/0, greedy+ls_first=10021/23, greedy+ls_best=8825/16, greedy+grasp=8825/16, greedy+milp=7711/36, milp+none=12720/0, milp+ls_first=10899/20, milp+ls_best=11443/17, milp+grasp=11443/17, milp+milp=7578/30
+  run 9/10 (seed=108) [338.0s] custo/migrações: least_requested+none=16187/0, least_requested+ls_first=16084/5, least_requested+ls_best=16105/5, least_requested+grasp=16105/5, least_requested+milp=17640/106, greedy+none=9497/0, greedy+ls_first=8314/18, greedy+ls_best=7636/13, greedy+grasp=7636/13, greedy+milp=4843/35, milp+none=8577/0, milp+ls_first=5875/15, milp+ls_best=5767/15, milp+grasp=5767/15, milp+milp=4568/33
+  run 10/10 (seed=109) [42.1s] custo/migrações: least_requested+none=17047/0, least_requested+ls_first=16652/1, least_requested+ls_best=16652/1, least_requested+grasp=16652/1, least_requested+milp=19467/104, greedy+none=13624/0, greedy+ls_first=10327/11, greedy+ls_best=10089/14, greedy+grasp=10089/14, greedy+milp=7506/30, milp+none=12250/0, milp+ls_first=9096/18, milp+ls_best=9057/18, milp+grasp=9057/18, milp+milp=7274/33
+
+=== N=20 nós, P=200 pods ===
+
+=== N=20 nós, P=500 pods ===
+
+=== N=50 nós, P=200 pods ===
+  run 1/10 (seed=100) [417.8s] custo/migrações: least_requested+none=110082/0, least_requested+ls_first=105539/9, least_requested+ls_best=104947/7, least_requested+grasp=104947/7, least_requested+milp=110352/93, greedy+none=61728/0, greedy+ls_first=45464/38, greedy+ls_best=45458/28, greedy+grasp=45458/28, greedy+milp=34369/74, milp+none=60614/0, milp+ls_first=48261/35, milp+ls_best=44783/32, milp+grasp=46997/33, milp+milp=32984/68
+  run 2/10 (seed=101) [463.8s] custo/migrações: least_requested+none=89985/0, least_requested+ls_first=87789/14, least_requested+ls_best=88896/9, least_requested+grasp=88896/9, least_requested+milp=91099/99, greedy+none=51771/0, greedy+ls_first=40645/43, greedy+ls_best=35114/35, greedy+grasp=35114/35, greedy+milp=28919/64, milp+none=52539/0, milp+ls_first=39964/35, milp+ls_best=35825/34, milp+grasp=36027/32, milp+milp=26344/60
+  run 3/10 (seed=102) [434.0s] custo/migrações: least_requested+none=104438/0, least_requested+ls_first=101708/11, least_requested+ls_best=101616/10, least_requested+grasp=101616/10, least_requested+milp=105272/103, greedy+none=66911/0, greedy+ls_first=54389/39, greedy+ls_best=51232/28, greedy+grasp=51232/28, greedy+milp=44264/67, milp+none=63945/0, milp+ls_first=54089/34, milp+ls_best=51885/34, milp+grasp=51086/28, milp+milp=41706/64
+  run 4/10 (seed=103) [452.1s] custo/migrações: least_requested+none=99640/0, least_requested+ls_first=97250/14, least_requested+ls_best=95772/11, least_requested+grasp=95772/11, least_requested+milp=101713/106, greedy+none=66562/0, greedy+ls_first=55797/48, greedy+ls_best=50690/42, greedy+grasp=50690/42, greedy+milp=36776/70, milp+none=68073/0, milp+ls_first=57575/44, milp+ls_best=53108/34, milp+grasp=52313/38, milp+milp=34060/57
+  run 5/10 (seed=104) [418.7s] custo/migrações: least_requested+none=107127/0, least_requested+ls_first=104034/8, least_requested+ls_best=103945/6, least_requested+grasp=103945/6, least_requested+milp=110942/109, greedy+none=65338/0, greedy+ls_first=48382/36, greedy+ls_best=46679/37, greedy+grasp=45941/35, greedy+milp=34707/74, milp+none=66633/0, milp+ls_first=48122/36, milp+ls_best=42159/33, milp+grasp=43051/30, milp+milp=31730/67
+  run 6/10 (seed=105) [439.3s] custo/migrações: least_requested+none=125560/0, least_requested+ls_first=125301/11, least_requested+ls_best=125075/8, least_requested+grasp=125075/8, least_requested+milp=131619/141, greedy+none=82735/0, greedy+ls_first=64729/52, greedy+ls_best=61426/39, greedy+grasp=61426/39, greedy+milp=56080/79, milp+none=75532/0, milp+ls_first=61006/31, milp+ls_best=59708/34, milp+grasp=63033/28, milp+milp=51686/68
+  run 7/10 (seed=106) [420.4s] custo/migrações: least_requested+none=98634/0, least_requested+ls_first=97508/15, least_requested+ls_best=96072/7, least_requested+grasp=96072/7, least_requested+milp=102221/103, greedy+none=54217/0, greedy+ls_first=43130/42, greedy+ls_best=40229/38, greedy+grasp=40229/38, greedy+milp=32927/72, milp+none=62159/0, milp+ls_first=46713/40, milp+ls_best=44709/34, milp+grasp=44709/34, milp+milp=29331/65
+  run 8/10 (seed=107) [401.8s] custo/migrações: least_requested+none=110114/0, least_requested+ls_first=107930/9, least_requested+ls_best=106954/8, least_requested+grasp=106954/8, least_requested+milp=112843/113, greedy+none=72216/0, greedy+ls_first=56859/54, greedy+ls_best=48194/35, greedy+grasp=48194/35, greedy+milp=40109/64, milp+none=65496/0, milp+ls_first=54922/29, milp+ls_best=53143/29, milp+grasp=55815/20, milp+milp=37954/69
+  run 9/10 (seed=108) [413.1s] custo/migrações: least_requested+none=110166/0, least_requested+ls_first=110674/5, least_requested+ls_best=109896/7, least_requested+grasp=109896/7, least_requested+milp=114682/109, greedy+none=61104/0, greedy+ls_first=48931/36, greedy+ls_best=46734/41, greedy+grasp=46734/41, greedy+milp=36528/74, milp+none=70565/0, milp+ls_first=54620/39, milp+ls_best=50733/34, milp+grasp=51781/35, milp+milp=34128/65
+  run 10/10 (seed=109) [454.4s] custo/migrações: least_requested+none=117134/0, least_requested+ls_first=115954/4, least_requested+ls_best=115712/6, least_requested+grasp=115712/6, least_requested+milp=119848/118, greedy+none=66928/0, greedy+ls_first=55232/39, greedy+ls_best=52177/29, greedy+grasp=52221/30, greedy+milp=45130/65, milp+none=67099/0, milp+ls_first=57198/35, milp+ls_best=51850/34, milp+grasp=51850/34, milp+milp=44497/69
+
+=== N=50 nós, P=500 pods ===
+  run 1/10 (seed=100) [525.6s] custo/migrações: least_requested+none=108088/0, least_requested+ls_first=108088/0, least_requested+ls_best=108088/0, least_requested+grasp=108088/0, least_requested+milp=112870/133, greedy+none=85608/0, greedy+ls_first=75917/16, greedy+ls_best=74970/17, greedy+grasp=74970/17, greedy+milp=41048/77, milp+none=77730/0, milp+ls_first=67330/17, milp+ls_best=68513/15, milp+grasp=72612/12, milp+milp=41388/87
+  run 2/10 (seed=101) [532.1s] custo/migrações: least_requested+none=86800/0, least_requested+ls_first=86679/3, least_requested+ls_best=86679/3, least_requested+grasp=86679/3, least_requested+milp=91016/144, greedy+none=75162/0, greedy+ls_first=66309/18, greedy+ls_best=67495/16, greedy+grasp=67495/16, greedy+milp=37948/89, milp+none=73710/0, milp+ls_first=63706/15, milp+ls_best=64850/15, milp+grasp=65627/13, milp+milp=37873/83
+  run 3/10 (seed=102) [553.6s] custo/migrações: least_requested+none=104645/0, least_requested+ls_first=104645/0, least_requested+ls_best=104645/0, least_requested+grasp=104645/0, least_requested+milp=109599/116, greedy+none=88225/0, greedy+ls_first=77231/22, greedy+ls_best=77629/21, greedy+grasp=77629/21, greedy+milp=47249/84, milp+none=87227/0, milp+ls_first=73714/24, milp+ls_best=75148/21, milp+grasp=77135/20, milp+milp=47488/85
+  run 4/10 (seed=103) [548.3s] custo/migrações: least_requested+none=96548/0, least_requested+ls_first=96527/0, least_requested+ls_best=96527/0, least_requested+grasp=96527/0, least_requested+milp=101242/123, greedy+none=70974/0, greedy+ls_first=62395/16, greedy+ls_best=62790/14, greedy+grasp=62790/14, greedy+milp=33811/75, milp+none=64933/0, milp+ls_first=56557/15, milp+ls_best=56912/16, milp+grasp=56912/16, milp+milp=36131/78
+  run 5/10 (seed=104) [522.5s] custo/migrações: least_requested+none=104656/0, least_requested+ls_first=104400/1, least_requested+ls_best=104400/1, least_requested+grasp=104400/1, least_requested+milp=109533/137, greedy+none=64384/0, greedy+ls_first=57974/15, greedy+ls_best=57806/15, greedy+grasp=57806/15, greedy+milp=35800/71, milp+none=66849/0, milp+ls_first=59353/13, milp+ls_best=59353/13, milp+grasp=61204/11, milp+milp=35851/80
+  run 6/10 (seed=105) [507.5s] custo/migrações: least_requested+none=126990/0, least_requested+ls_first=126990/0, least_requested+ls_best=126990/0, least_requested+grasp=126990/0, least_requested+milp=132761/126, greedy+none=97197/0, greedy+ls_first=87208/17, greedy+ls_best=86254/17, greedy+grasp=86254/17, greedy+milp=53864/82, milp+none=94457/0, milp+ls_first=81292/16, milp+ls_best=85693/13, milp+grasp=85693/13, milp+milp=52756/87
+  run 7/10 (seed=106) [519.8s] custo/migrações: least_requested+none=97017/0, least_requested+ls_first=97071/1, least_requested+ls_best=97071/1, least_requested+grasp=97071/1, least_requested+milp=102028/132, greedy+none=76147/0, greedy+ls_first=66357/19, greedy+ls_best=66782/18, greedy+grasp=66782/18, greedy+milp=36646/76, milp+none=76208/0, milp+ls_first=67001/16, milp+ls_best=65255/18, milp+grasp=65151/17, milp+milp=34958/81
+  run 8/10 (seed=107) [423.8s] custo/migrações: least_requested+none=110530/0, least_requested+ls_first=110530/0, least_requested+ls_best=110530/0, least_requested+grasp=110530/0, least_requested+milp=115532/131, greedy+none=80452/0, greedy+ls_first=70878/18, greedy+ls_best=69851/17, greedy+grasp=69851/17, greedy+milp=43794/89, milp+none=77119/0, milp+ls_first=69510/15, milp+ls_best=69510/15, milp+grasp=69510/15, milp+milp=43342/94
+  run 9/10 (seed=108) [470.1s] custo/migrações: least_requested+none=109608/0, least_requested+ls_first=109608/0, least_requested+ls_best=109608/0, least_requested+grasp=109608/0, least_requested+milp=114788/139, greedy+none=75114/0, greedy+ls_first=68839/14, greedy+ls_best=67870/15, greedy+grasp=67870/15, greedy+milp=42589/84, milp+none=79161/0, milp+ls_first=72558/13, milp+ls_best=69763/13, milp+grasp=72941/16, milp+milp=42233/81
+  run 10/10 (seed=109) [510.8s] custo/migrações: least_requested+none=116127/0, least_requested+ls_first=115936/1, least_requested+ls_best=115936/1, least_requested+grasp=115936/1, least_requested+milp=120950/130, greedy+none=92482/0, greedy+ls_first=79025/20, greedy+ls_best=78786/20, greedy+grasp=78786/20, greedy+milp=48058/88, milp+none=88745/0, milp+ls_first=75365/16, milp+ls_best=76822/17, milp+grasp=78663/16, milp+milp=48230/86
+
+=== N=50 nós, P=1000 pods ===
+  run 1/10 (seed=100) [351.7s] custo/migrações: least_requested+none=106201/0, least_requested+ls_first=106201/0, least_requested+ls_best=106201/0, least_requested+grasp=106201/0, least_requested+milp=111052/74, greedy+none=74316/0, greedy+ls_first=67613/18, greedy+ls_best=66279/19, greedy+grasp=66279/19, greedy+milp=51330/64, milp+none=72919/0, milp+ls_first=70908/8, milp+ls_best=70908/8, milp+grasp=70908/8, milp+milp=53141/66
+  run 2/10 (seed=101) [580.7s] custo/migrações: least_requested+none=85323/0, least_requested+ls_first=85323/0, least_requested+ls_best=85323/0, least_requested+grasp=85323/0, least_requested+milp=89210/87, greedy+none=66615/0, greedy+ls_first=59528/17, greedy+ls_best=59528/17, greedy+grasp=59528/17, greedy+milp=46373/76, milp+none=69947/0, milp+ls_first=68498/6, milp+ls_best=68498/6, milp+grasp=68498/6, milp+milp=48751/71
+  run 3/10 (seed=102) [369.0s] custo/migrações: least_requested+none=103103/0, least_requested+ls_first=103103/0, least_requested+ls_best=103103/0, least_requested+grasp=103103/0, least_requested+milp=107670/91, greedy+none=81353/0, greedy+ls_first=74657/19, greedy+ls_best=74657/19, greedy+grasp=74657/19, greedy+milp=61250/64, milp+none=81495/0, milp+ls_first=78183/9, milp+ls_best=78183/9, milp+grasp=78183/9, milp+milp=65069/56
+  run 4/10 (seed=103) [590.6s] custo/migrações: least_requested+none=95283/0, least_requested+ls_first=95283/0, least_requested+ls_best=95283/0, least_requested+grasp=95283/0, least_requested+milp=99273/89, greedy+none=62430/0, greedy+ls_first=58678/16, greedy+ls_best=58678/16, greedy+grasp=58678/16, greedy+milp=51795/63, milp+none=62986/0, milp+ls_first=62556/5, milp+ls_best=65089/6, milp+grasp=63495/6, milp+milp=49559/59
+  run 5/10 (seed=104) [596.6s] custo/migrações: least_requested+none=103398/0, least_requested+ls_first=103398/0, least_requested+ls_best=103398/0, least_requested+grasp=103398/0, least_requested+milp=108225/72, greedy+none=81243/0, greedy+ls_first=68835/20, greedy+ls_best=68835/20, greedy+grasp=68835/20, greedy+milp=58620/64, milp+none=84262/0, milp+ls_first=83197/8, milp+ls_best=82148/6, milp+grasp=82148/6, milp+milp=64469/70
+  run 6/10 (seed=105) [673.2s] custo/migrações: least_requested+none=124479/0, least_requested+ls_first=124479/0, least_requested+ls_best=124479/0, least_requested+grasp=124479/0, least_requested+milp=129320/74, greedy+none=94910/0, greedy+ls_first=84932/20, greedy+ls_best=84932/20, greedy+grasp=84932/20, greedy+milp=71426/78, milp+none=102387/0, milp+ls_first=98317/6, milp+ls_best=98317/6, milp+grasp=98697/5, milp+milp=76409/64
+  run 7/10 (seed=106) [609.6s] custo/migrações: least_requested+none=95717/0, least_requested+ls_first=95717/0, least_requested+ls_best=95717/0, least_requested+grasp=95717/0, least_requested+milp=99980/83, greedy+none=79946/0, greedy+ls_first=73969/19, greedy+ls_best=73969/19, greedy+grasp=73969/19, greedy+milp=54806/78, milp+none=78870/0, milp+ls_first=80344/8, milp+ls_best=80289/8, milp+grasp=80289/8, milp+milp=55595/82
+  run 8/10 (seed=107) [588.7s] custo/migrações: least_requested+none=108638/0, least_requested+ls_first=108638/0, least_requested+ls_best=108638/0, least_requested+grasp=108638/0, least_requested+milp=113298/93, greedy+none=74078/0, greedy+ls_first=66119/17, greedy+ls_best=66119/17, greedy+grasp=66119/17, greedy+milp=53328/72, milp+none=77872/0, milp+ls_first=77537/7, milp+ls_best=79452/9, milp+grasp=77537/7, milp+milp=59384/65
+  run 9/10 (seed=108) [602.3s] custo/migrações: least_requested+none=108039/0, least_requested+ls_first=108039/0, least_requested+ls_best=108039/0, least_requested+grasp=108039/0, least_requested+milp=112710/87, greedy+none=83676/0, greedy+ls_first=77636/13, greedy+ls_best=77636/13, greedy+grasp=77636/13, greedy+milp=58222/82, milp+none=88159/0, milp+ls_first=84846/9, milp+ls_best=84846/9, milp+grasp=84846/9, milp+milp=61854/72
+  run 10/10 (seed=109) [621.0s] custo/migrações: least_requested+none=113914/0, least_requested+ls_first=113914/0, least_requested+ls_best=113914/0, least_requested+grasp=113914/0, least_requested+milp=118735/100, greedy+none=98318/0, greedy+ls_first=88004/19, greedy+ls_best=87692/19, greedy+grasp=87692/19, greedy+milp=70994/83, milp+none=103882/0, milp+ls_first=101319/6, milp+ls_best=101319/6, milp+grasp=101319/6, milp+milp=74777/72
+
+=== N=100 nós, P=500 pods ===
+  run 1/10 (seed=100) [921.2s] custo/migrações: least_requested+none=464619/0, least_requested+ls_first=463845/11, least_requested+ls_best=463351/8, least_requested+grasp=463351/8, least_requested+milp=474870/117, greedy+none=260160/0, greedy+ls_first=225002/73, greedy+ls_best=208041/64, greedy+grasp=205434/64, greedy+milp=164473/114, milp+none=280000/0, milp+ls_first=225777/65, milp+ls_best=219055/54, milp+grasp=219055/54, milp+milp=157500/119
+  run 2/10 (seed=101) [915.9s] custo/migrações: least_requested+none=417812/0, least_requested+ls_first=414067/15, least_requested+ls_best=411580/10, least_requested+grasp=411580/10, least_requested+milp=425174/113, greedy+none=276417/0, greedy+ls_first=214564/77, greedy+ls_best=214489/58, greedy+grasp=214489/58, greedy+milp=146636/123, milp+none=296085/0, milp+ls_first=220287/71, milp+ls_best=220897/57, milp+grasp=230601/59, milp+milp=144097/115
+  run 3/10 (seed=102) [34034.2s] custo/migrações: least_requested+none=443219/0, least_requested+ls_first=443837/16, least_requested+ls_best=443045/7, least_requested+grasp=443045/7, least_requested+milp=450628/103, greedy+none=289255/0, greedy+ls_first=248129/71, greedy+ls_best=237710/52, greedy+grasp=237710/52, greedy+milp=185013/111, milp+none=289988/0, milp+ls_first=255917/67, milp+ls_best=236026/56, milp+grasp=241871/64, milp+milp=176835/123
+  run 4/10 (seed=103) [2359.8s] custo/migrações: least_requested+none=455527/0, least_requested+ls_first=450773/16, least_requested+ls_best=451919/12, least_requested+grasp=451919/12, least_requested+milp=462463/121, greedy+none=251379/0, greedy+ls_first=197496/59, greedy+ls_best=197387/54, greedy+grasp=197387/54, greedy+milp=149582/113, milp+none=255890/0, milp+ls_first=204849/56, milp+ls_best=205590/55, milp+grasp=203431/59, milp+milp=147212/109
+  run 5/10 (seed=104) [718.5s] custo/migrações: least_requested+none=436050/0, least_requested+ls_first=434560/10, least_requested+ls_best=433250/13, least_requested+grasp=433250/13, least_requested+milp=444108/123, greedy+none=209476/0, greedy+ls_first=170437/52, greedy+ls_best=166921/51, greedy+grasp=163061/54, greedy+milp=121853/109, milp+none=222613/0, milp+ls_first=182681/57, milp+ls_best=183115/51, milp+grasp=177414/45, milp+milp=121211/110
+  run 6/10 (seed=105) [806.4s] custo/migrações: least_requested+none=483089/0, least_requested+ls_first=481566/11, least_requested+ls_best=480438/10, least_requested+grasp=480438/10, least_requested+milp=488147/137, greedy+none=291719/0, greedy+ls_first=250330/63, greedy+ls_best=240616/61, greedy+grasp=240616/61, greedy+milp=174846/114, milp+none=285387/0, milp+ls_first=225334/51, milp+ls_best=228798/51, milp+grasp=224665/48, milp+milp=166219/108
+  run 7/10 (seed=106) [756.9s] custo/migrações: least_requested+none=403077/0, least_requested+ls_first=401523/14, least_requested+ls_best=397406/10, least_requested+grasp=397406/10, least_requested+milp=409966/130, greedy+none=244593/0, greedy+ls_first=199362/67, greedy+ls_best=174141/57, greedy+grasp=174141/57, greedy+milp=123598/104, milp+none=246150/0, milp+ls_first=185877/53, milp+ls_best=189964/53, milp+grasp=186895/56, milp+milp=122772/108
+  run 8/10 (seed=107) [747.5s] custo/migrações: least_requested+none=488658/0, least_requested+ls_first=479411/11, least_requested+ls_best=478938/8, least_requested+grasp=478938/8, least_requested+milp=492990/122, greedy+none=272196/0, greedy+ls_first=220512/59, greedy+ls_best=211421/52, greedy+grasp=211421/52, greedy+milp=155705/112, milp+none=263695/0, milp+ls_first=221777/50, milp+ls_best=217411/47, milp+grasp=217411/47, milp+milp=155693/105
+  run 9/10 (seed=108) [757.6s] custo/migrações: least_requested+none=445167/0, least_requested+ls_first=444370/14, least_requested+ls_best=445735/12, least_requested+grasp=445735/12, least_requested+milp=454083/118, greedy+none=248239/0, greedy+ls_first=211206/53, greedy+ls_best=205029/47, greedy+grasp=207930/42, greedy+milp=148845/114, milp+none=252589/0, milp+ls_first=199998/52, milp+ls_best=195234/47, milp+grasp=216952/44, milp+milp=145469/109
+  run 10/10 (seed=109) [775.9s] custo/migrações: least_requested+none=477472/0, least_requested+ls_first=478299/10, least_requested+ls_best=477943/11, least_requested+grasp=477943/11, least_requested+milp=483710/115, greedy+none=310150/0, greedy+ls_first=250509/74, greedy+ls_best=235045/61, greedy+grasp=234662/60, greedy+milp=182117/104, milp+none=331418/0, milp+ls_first=265527/63, milp+ls_best=247804/60, milp+grasp=247804/60, milp+milp=183502/116
+
+=== N=100 nós, P=1000 pods ===
+  run 1/10 (seed=100) [1223.2s] custo/migrações: least_requested+none=431702/0, least_requested+ls_first=431702/0, least_requested+ls_best=431702/0, least_requested+grasp=431702/0, least_requested+milp=442884/131, greedy+none=324273/0, greedy+ls_first=275419/39, greedy+ls_best=270762/39, greedy+grasp=270762/39, greedy+milp=200737/147, milp+none=306776/0, milp+ls_first=271523/33, milp+ls_best=278379/34, milp+grasp=278379/34, milp+milp=201100/140
+  run 2/10 (seed=101) [938.4s] custo/migrações: least_requested+none=385174/0, least_requested+ls_first=384597/1, least_requested+ls_best=384597/1, least_requested+grasp=384597/1, least_requested+milp=394509/136, greedy+none=268312/0, greedy+ls_first=226960/33, greedy+ls_best=226523/33, greedy+grasp=226523/33, greedy+milp=159644/127, milp+none=287647/0, milp+ls_first=257520/28, milp+ls_best=255465/27, milp+grasp=255465/27, milp+milp=166257/140
+  run 3/10 (seed=102) [866.8s] custo/migrações: least_requested+none=413482/0, least_requested+ls_first=413482/0, least_requested+ls_best=413482/0, least_requested+grasp=413482/0, least_requested+milp=423580/140, greedy+none=323342/0, greedy+ls_first=285694/35, greedy+ls_best=287127/36, greedy+grasp=287127/36, greedy+milp=199311/140, milp+none=316091/0, milp+ls_first=279538/32, milp+ls_best=273252/35, milp+grasp=273252/35, milp+milp=191440/145
+  run 4/10 (seed=103) [913.3s] custo/migrações: least_requested+none=421262/0, least_requested+ls_first=421262/0, least_requested+ls_best=421262/0, least_requested+grasp=421262/0, least_requested+milp=431901/138, greedy+none=329407/0, greedy+ls_first=288042/37, greedy+ls_best=284099/35, greedy+grasp=284099/35, greedy+milp=191234/144, milp+none=302940/0, milp+ls_first=271977/36, milp+ls_best=271166/37, milp+grasp=271166/37, milp+milp=190691/150
+  run 5/10 (seed=104) [879.4s] custo/migrações: least_requested+none=405630/0, least_requested+ls_first=405634/3, least_requested+ls_best=405634/3, least_requested+grasp=405634/3, least_requested+milp=414593/138, greedy+none=320430/0, greedy+ls_first=279101/36, greedy+ls_best=276719/36, greedy+grasp=276719/36, greedy+milp=192075/157, milp+none=308577/0, milp+ls_first=269630/37, milp+ls_best=268314/34, milp+grasp=268314/34, milp+milp=179942/151
+  run 6/10 (seed=105) [845.7s] custo/migrações: least_requested+none=453114/0, least_requested+ls_first=453114/0, least_requested+ls_best=453114/0, least_requested+grasp=453114/0, least_requested+milp=464673/141, greedy+none=315115/0, greedy+ls_first=283847/33, greedy+ls_best=282647/33, greedy+grasp=282647/33, greedy+milp=199900/131, milp+none=311133/0, milp+ls_first=271469/35, milp+ls_best=274945/32, milp+grasp=274945/32, milp+milp=191064/130
+  run 7/10 (seed=106) [919.8s] custo/migrações: least_requested+none=377378/0, least_requested+ls_first=377378/0, least_requested+ls_best=377378/0, least_requested+grasp=377378/0, least_requested+milp=386967/130, greedy+none=304792/0, greedy+ls_first=269121/33, greedy+ls_best=269510/32, greedy+grasp=269510/32, greedy+milp=179735/147, milp+none=282658/0, milp+ls_first=250326/37, milp+ls_best=251921/35, milp+grasp=251921/35, milp+milp=167388/141
+  run 8/10 (seed=107) [960.5s] custo/migrações: least_requested+none=451395/0, least_requested+ls_first=451395/0, least_requested+ls_best=451395/0, least_requested+grasp=451395/0, least_requested+milp=462524/141, greedy+none=350393/0, greedy+ls_first=307793/38, greedy+ls_best=306826/34, greedy+grasp=306826/34, greedy+milp=219091/152, milp+none=350354/0, milp+ls_first=311685/32, milp+ls_best=306392/33, milp+grasp=306392/33, milp+milp=214516/135
+  run 9/10 (seed=108) [913.1s] custo/migrações: least_requested+none=415513/0, least_requested+ls_first=415577/2, least_requested+ls_best=415577/2, least_requested+grasp=415577/2, least_requested+milp=425960/126, greedy+none=314121/0, greedy+ls_first=286356/35, greedy+ls_best=285273/34, greedy+grasp=285273/34, greedy+milp=187129/142, milp+none=308759/0, milp+ls_first=279911/35, milp+ls_best=268690/36, milp+grasp=268690/36, milp+milp=177150/136
+  run 10/10 (seed=109) [875.3s] custo/migrações: least_requested+none=447780/0, least_requested+ls_first=447780/0, least_requested+ls_best=447780/0, least_requested+grasp=447780/0, least_requested+milp=459471/137, greedy+none=313231/0, greedy+ls_first=280189/33, greedy+ls_best=278396/34, greedy+grasp=278396/34, greedy+milp=194449/132, milp+none=317599/0, milp+ls_first=282688/29, milp+ls_best=285749/30, milp+grasp=287419/24, milp+milp=193925/128
+
+########## lambda=1 omega=0.25 ##########
+
+Legenda: LR = Scheduler least-requested (kube padrão), GR = Scheduler guloso por custo, MS = Scheduler MILP
+
+################ IMPLANTÁVEIS (Scheduler heurístico, decide no caminho crítico) ################
+
+=== ADMISSÃO A = soma de w_j*a_j nos períodos (prioridade 1; maior é melhor) ===
+ Pods  Nós |     LR+none LR+ls_first  LR+ls_best    LR+grasp     LR+milp     GR+none GR+ls_first  GR+ls_best    GR+grasp     GR+milp
+------------------------------------------------------------------------------------------------------------------------------------
+   50   10 |      111.73      111.73      111.73      111.73      110.87      112.64      112.86      112.86      112.86      112.97
+  100   10 |      101.10      101.10      101.10      101.10      101.10      101.41      101.41      101.41      101.41      101.41
+  100   20 |      199.04      199.17      199.17      199.17      198.82      202.25      202.18      202.25      202.25      202.32
+  200   10 |      104.05      104.05      104.05      104.05      104.05      104.19      104.19      104.19      104.19      104.19
+  200   20 |      214.82      214.82      214.82      214.82      214.75      215.68      215.68      215.68      215.68      215.68
+  200   50 |      501.68      501.85      501.92      501.92      501.99      510.98      510.98      510.98      510.98      510.98
+  500   20 |      212.47      212.47      212.47      212.47      212.47      212.64      212.64      212.64      212.64      212.64
+  500   50 |      517.16      517.16      517.16      517.16      517.20      518.32      518.32      518.32      518.32      518.32
+  500  100 |     1027.90     1027.83     1027.89     1027.89     1027.95     1037.25     1037.25     1037.25     1037.25     1037.25
+ 1000   50 |      507.20      507.20      507.20      507.20      507.20      507.24      507.24      507.24      507.24      507.24
+ 1000  100 |     1024.31     1024.31     1024.31     1024.31     1024.31     1026.00     1026.00     1026.00     1026.00     1026.00
+
+=== PODS PENDING somados nos períodos (média das seeds) ===
+ Pods  Nós |     LR+none LR+ls_first  LR+ls_best    LR+grasp     LR+milp     GR+none GR+ls_first  GR+ls_best    GR+grasp     GR+milp
+------------------------------------------------------------------------------------------------------------------------------------
+   50   10 |         4.8         4.8         4.8         4.8         6.1         3.3         2.9         2.9         2.9         2.7
+  100   10 |         3.1         3.1         3.1         3.1         3.1         2.4         2.4         2.4         2.4         2.4
+  100   20 |         7.3         7.1         7.1         7.1         7.7         2.1         2.2         2.1         2.1         2.0
+  200   10 |         3.7         3.7         3.7         3.7         3.7         3.0         3.0         3.0         3.0         3.0
+  200   20 |         4.1         4.1         4.1         4.1         4.3         1.2         1.2         1.2         1.2         1.2
+  200   50 |        13.1        12.9        12.8        12.8        12.7         0.7         0.7         0.7         0.7         0.7
+  500   20 |         2.6         2.6         2.6         2.6         2.6         1.3         1.3         1.3         1.3         1.3
+  500   50 |         3.8         3.8         3.8         3.8         3.7         0.0         0.0         0.0         0.0         0.0
+  500  100 |        18.1        18.2        18.1        18.1        18.0         2.3         2.3         2.3         2.3         2.3
+ 1000   50 |         0.3         0.3         0.3         0.3         0.3         0.0         0.0         0.0         0.0         0.0
+ 1000  100 |         5.8         5.8         5.8         5.8         5.8         0.0         0.0         0.0         0.0         0.0
+
+=== CUSTO C = nós + lambda*fragmentação + evicções (prioridade 2): gap % vs LR+none ===
+ Pods  Nós |     LR+none LR+ls_first  LR+ls_best    LR+grasp     LR+milp     GR+none GR+ls_first  GR+ls_best    GR+grasp     GR+milp
+------------------------------------------------------------------------------------------------------------------------------------
+   50   10 |       +0.0%       -0.6%       -0.6%       -0.6%      +14.9%      -30.0%      -44.0%      -46.9%      -46.9%      -53.4%
+  100   10 |       +0.0%       +0.0%       +0.0%       +0.0%      +20.8%      -22.1%      -34.5%      -34.5%      -34.5%      -57.2%
+  100   20 |       +0.0%       -1.4%       -1.4%       -1.4%      +11.3%      -35.7%      -49.4%      -52.6%      -52.8%      -63.9%
+  200   10 |       +0.0%       +0.0%       +0.0%       +0.0%      +17.4%      -16.2%      -22.5%      -22.5%      -22.5%      -43.7%
+  200   20 |       +0.0%       -0.1%       -0.1%       -0.1%      +11.6%      -19.4%      -30.7%      -30.5%      -30.5%      -58.9%
+  200   50 |       +0.0%       -1.8%       -2.2%       -2.2%       +2.6%      -39.5%      -52.1%      -55.5%      -55.5%      -63.7%
+  500   20 |       +0.0%       +0.0%       +0.0%       +0.0%       +8.7%      -17.8%      -24.8%      -24.8%      -24.8%      -39.7%
+  500   50 |       +0.0%       -0.1%       -0.1%       -0.1%       +4.6%      -24.1%      -32.9%      -33.1%      -33.1%      -60.3%
+  500  100 |       +0.0%       -0.5%       -0.7%       -0.7%       +1.6%      -41.2%      -51.5%      -53.7%      -53.8%      -65.6%
+ 1000   50 |       +0.0%       +0.0%       +0.0%       +0.0%       +4.3%      -23.7%      -31.0%      -31.2%      -31.2%      -44.6%
+ 1000  100 |       +0.0%       -0.0%       -0.0%       -0.0%       +2.5%      -24.7%      -33.8%      -34.1%      -34.1%      -54.2%
+
+=== CUSTO DE NÓS soma de c_i*x_i: gap % vs LR+none ===
+ Pods  Nós |     LR+none LR+ls_first  LR+ls_best    LR+grasp     LR+milp     GR+none GR+ls_first  GR+ls_best    GR+grasp     GR+milp
+------------------------------------------------------------------------------------------------------------------------------------
+   50   10 |       +0.0%       -0.0%       -0.0%       -0.0%       +0.6%      -27.6%      -43.7%      -46.8%      -46.8%      -54.4%
+  100   10 |       +0.0%       +0.0%       +0.0%       +0.0%       +0.0%      -21.7%      -34.9%      -35.0%      -35.0%      -60.8%
+  100   20 |       +0.0%       -1.3%       -1.2%       -1.2%       +0.3%      -33.2%      -48.6%      -52.0%      -52.2%      -65.1%
+  200   10 |       +0.0%       +0.0%       +0.0%       +0.0%       +0.0%      -16.2%      -22.9%      -22.9%      -22.9%      -46.0%
+  200   20 |       +0.0%       +0.0%       +0.0%       +0.0%       +0.0%      -18.3%      -30.4%      -30.3%      -30.3%      -62.0%
+  200   50 |       +0.0%       -1.5%       -1.9%       -1.9%       -1.8%      -35.3%      -49.6%      -52.9%      -52.9%      -62.8%
+  500   20 |       +0.0%       +0.0%       +0.0%       +0.0%       +0.0%      -17.7%      -25.2%      -25.2%      -25.2%      -41.6%
+  500   50 |       +0.0%       +0.0%       +0.0%       +0.0%       +0.0%      -23.2%      -32.7%      -32.8%      -32.8%      -62.5%
+  500  100 |       +0.0%       -0.3%       -0.3%       -0.3%       -0.3%      -37.6%      -49.5%      -51.7%      -51.8%      -65.1%
+ 1000   50 |       +0.0%       +0.0%       +0.0%       +0.0%       +0.0%      -23.5%      -31.4%      -31.5%      -31.5%      -46.5%
+ 1000  100 |       +0.0%       +0.0%       +0.0%       +0.0%       +0.0%      -23.9%      -33.6%      -33.9%      -33.9%      -55.9%
+
+=== CUSTO DE FRAGMENTAÇÃO lambda*soma de c_i*F_i (média das seeds) ===
+ Pods  Nós |     LR+none LR+ls_first  LR+ls_best    LR+grasp     LR+milp     GR+none GR+ls_first  GR+ls_best    GR+grasp     GR+milp
+------------------------------------------------------------------------------------------------------------------------------------
+   50   10 |       457.7       425.9       427.4       427.4       464.6       219.0       196.9       186.6       186.6       116.9
+  100   10 |        79.1        79.1        79.1        79.1        78.1        42.5        46.2        46.2        46.2        54.9
+  100   20 |      1570.1      1500.3      1480.0      1480.0      1490.7       622.9       494.7       494.9       487.5       275.5
+  200   10 |        12.7        12.7        12.7        12.7        12.4         7.0         7.0         7.0         7.0         9.9
+  200   20 |       374.4       362.4       361.6       361.6       351.9       136.3       136.1       133.1       133.1       163.4
+  200   50 |     13705.7     12898.0     12841.4     12841.4     12920.4      4365.0      2997.9      2736.4      2723.8      1722.7
+  500   20 |        39.3        39.3        39.3        39.3        37.7        12.7        12.7        12.7        12.7        12.1
+  500   50 |      2008.1      1938.0      1938.0      1938.0      1808.4       663.9       664.0       665.8       665.8       752.1
+  500  100 |     42191.5     40641.6     39805.4     39805.4     40047.2      9881.9      8774.1      8614.6      8592.2      5783.5
+ 1000   50 |       316.8       316.8       316.8       316.8       311.6       102.0       101.9       101.9       101.9        96.2
+ 1000  100 |      7284.2      7203.5      7203.5      7203.5      7475.9      2130.2      2111.7      2113.9      2113.9      2063.7
+
+=== % DE CAPACIDADE FRAGMENTADA (média) ===
+ Pods  Nós |     LR+none LR+ls_first  LR+ls_best    LR+grasp     LR+milp     GR+none GR+ls_first  GR+ls_best    GR+grasp     GR+milp
+------------------------------------------------------------------------------------------------------------------------------------
+   50   10 |         9.7         9.4         9.4         9.4         9.8         7.3         9.0         8.7         8.7         6.8
+  100   10 |         1.7         1.7         1.7         1.7         1.7         1.2         1.5         1.5         1.5         3.5
+  100   20 |         9.0         8.9         8.8         8.8         8.5         6.2         7.0         7.5         7.4         5.8
+  200   10 |         0.3         0.3         0.3         0.3         0.3         0.2         0.2         0.2         0.2         0.4
+  200   20 |         2.0         2.0         2.0         2.0         1.9         0.9         1.1         1.1         1.1         2.9
+  200   50 |        13.5        13.1        13.0        13.0        13.1         8.2         7.7         7.6         7.5         5.8
+  500   20 |         0.2         0.2         0.2         0.2         0.2         0.1         0.1         0.1         0.1         0.1
+  500   50 |         1.6         1.6         1.6         1.6         1.5         0.7         0.8         0.7         0.7         2.2
+  500  100 |         8.8         8.6         8.5         8.5         8.5         4.4         5.1         5.2         5.2         4.8
+ 1000   50 |         0.3         0.3         0.3         0.3         0.3         0.1         0.1         0.1         0.1         0.1
+ 1000  100 |         1.5         1.5         1.5         1.5         1.6         0.6         0.6         0.6         0.6         1.2
+
+=== UTILIZAÇÃO: requests alocados / capacidade ligada (média) ===
+ Pods  Nós |     LR+none LR+ls_first  LR+ls_best    LR+grasp     LR+milp     GR+none GR+ls_first  GR+ls_best    GR+grasp     GR+milp
+------------------------------------------------------------------------------------------------------------------------------------
+   50   10 |       0.562       0.561       0.561       0.561       0.554       0.723       0.837       0.840       0.840       0.890
+  100   10 |       0.505       0.505       0.505       0.505       0.505       0.609       0.693       0.693       0.693       0.868
+  100   20 |       0.510       0.511       0.510       0.510       0.506       0.714       0.863       0.859       0.860       0.917
+  200   10 |       0.520       0.520       0.520       0.520       0.520       0.579       0.627       0.627       0.627       0.751
+  200   20 |       0.537       0.537       0.537       0.537       0.537       0.626       0.695       0.693       0.693       0.894
+  200   50 |       0.546       0.545       0.546       0.546       0.547       0.811       0.901       0.903       0.902       0.933
+  500   20 |       0.531       0.531       0.531       0.531       0.531       0.601       0.657       0.657       0.657       0.737
+  500   50 |       0.517       0.517       0.517       0.517       0.517       0.620       0.691       0.690       0.690       0.898
+  500  100 |       0.517       0.517       0.517       0.517       0.518       0.770       0.911       0.904       0.904       0.942
+ 1000   50 |       0.507       0.507       0.507       0.507       0.507       0.596       0.655       0.655       0.655       0.748
+ 1000  100 |       0.512       0.512       0.512       0.512       0.512       0.625       0.698       0.697       0.697       0.835
+
+=== EVICÇÕES totais (média das seeds) ===
+ Pods  Nós |     LR+none LR+ls_first  LR+ls_best    LR+grasp     LR+milp     GR+none GR+ls_first  GR+ls_best    GR+grasp     GR+milp
+------------------------------------------------------------------------------------------------------------------------------------
+   50   10 |         0.0         0.7         0.7         0.7       124.9         0.0         8.8         9.2         9.2        26.5
+  100   10 |         0.0         0.0         0.0         0.0       169.9         0.0         4.4         4.4         4.4        24.6
+  100   20 |         0.0         3.9         3.7         3.7       196.7         0.0        18.1        15.4        15.5        47.5
+  200   10 |         0.0         0.0         0.0         0.0       139.5         0.0         3.4         3.4         3.4        17.8
+  200   20 |         0.0         0.3         0.3         0.3       191.4         0.0         8.1         8.6         8.6        47.4
+  200   50 |         0.0        10.2         8.1         8.1       200.0         0.0        44.9        36.8        36.7        92.2
+  500   20 |         0.0         0.0         0.0         0.0       140.8         0.0         7.4         7.4         7.4        32.4
+  500   50 |         0.0         0.7         0.7         0.7       197.2         0.0        17.5        17.0        17.0        89.8
+  500  100 |         0.0        13.5        11.1        11.1       200.0         0.0        66.0        56.9        56.5       132.0
+ 1000   50 |         0.0         0.0         0.0         0.0       175.1         0.0        17.8        17.9        17.9        76.1
+ 1000  100 |         0.0         0.6         0.6         0.6       199.0         0.0        35.2        34.6        34.6       155.1
+
+=== MIGRAÇÕES: pods do período anterior que mudaram de nó (média) ===
+ Pods  Nós |     LR+none LR+ls_first  LR+ls_best    LR+grasp     LR+milp     GR+none GR+ls_first  GR+ls_best    GR+grasp     GR+milp
+------------------------------------------------------------------------------------------------------------------------------------
+   50   10 |         0.0         0.6         0.6         0.6        65.3         0.0         7.8         8.0         8.0        17.0
+  100   10 |         0.0         0.0         0.0         0.0        87.3         0.0         4.4         4.4         4.4        21.3
+  100   20 |         0.0         3.9         3.7         3.7       113.8         0.0        17.1        14.3        14.4        34.9
+  200   10 |         0.0         0.0         0.0         0.0        46.7         0.0         3.4         3.4         3.4        17.0
+  200   20 |         0.0         0.3         0.3         0.3       113.1         0.0         7.8         8.3         8.3        39.4
+  200   50 |         0.0        10.0         7.9         7.9       109.4         0.0        42.7        35.2        35.1        70.3
+  500   20 |         0.0         0.0         0.0         0.0        49.2         0.0         7.4         7.4         7.4        31.5
+  500   50 |         0.0         0.6         0.6         0.6       131.1         0.0        17.5        17.0        17.0        81.5
+  500  100 |         0.0        12.8        10.1        10.1       119.9         0.0        64.8        55.7        55.4       111.8
+ 1000   50 |         0.0         0.0         0.0         0.0        85.0         0.0        17.8        17.9        17.9        72.4
+ 1000  100 |         0.0         0.6         0.6         0.6       135.8         0.0        35.2        34.6        34.6       141.9
+
+=== TEMPO total em ms (média das seeds) ===
+ Pods  Nós |     LR+none LR+ls_first  LR+ls_best    LR+grasp     LR+milp     GR+none GR+ls_first  GR+ls_best    GR+grasp     GR+milp
+------------------------------------------------------------------------------------------------------------------------------------
+   50   10 |           0           5           4          52        5154           3          30          31         277        2020
+  100   10 |           1          10           9          90        2839           6          57          55         490        1776
+  100   20 |           2          15          14         184       15399          12         125         126        1104        7822
+  200   10 |           1          18          17         176        1588          17         167         166        1292         925
+  200   20 |           2          24          22         219        8637          23         231         235        2125        5816
+  200   50 |           5          58          58         656       25915          67         620         833        7898       35598
+  500   20 |           4          53          50         471        5124          61         601         640        5838        3978
+  500   50 |          12         136         132        1405       51158         221        1969        2343       25021       37142
+  500  100 |          22         342         393        3105       82819         321        2330        4832      212852      117224
+ 1000   50 |          29         291         290        2849       57150         476        5154        6204       58130       47194
+ 1000  100 |          33         319         331        2953       99230         557        6540       10333      103804       93285
+
+################ REFERÊNCIA (Scheduler MILP: limite superior, não implantável no caminho crítico) ################
+
+=== ADMISSÃO A = soma de w_j*a_j nos períodos (prioridade 1; maior é melhor) ===
+ Pods  Nós |     MS+none MS+ls_first  MS+ls_best    MS+grasp     MS+milp
+------------------------------------------------------------------------
+   50   10 |      113.77      113.77      113.77      113.77      113.77
+  100   10 |      101.56      101.56      101.56      101.56      101.56
+  100   20 |      202.85      202.85      202.85      202.85      202.91
+  200   10 |      104.21      104.21      104.21      104.21      104.21
+  200   20 |      215.79      215.79      215.79      215.79      215.79
+  200   50 |      511.27      511.27      511.29      511.27      511.29
+  500   20 |      212.65      212.65      212.65      212.65      212.65
+  500   50 |      518.32      518.32      518.32      518.32      518.32
+  500  100 |     1038.11     1038.09     1038.08     1038.09     1038.09
+ 1000   50 |      507.24      507.24      507.24      507.24      507.24
+ 1000  100 |     1026.00     1026.00     1026.00     1026.00     1026.00
+
+=== PODS PENDING somados nos períodos (média das seeds) ===
+ Pods  Nós |     MS+none MS+ls_first  MS+ls_best    MS+grasp     MS+milp
+------------------------------------------------------------------------
+   50   10 |         1.4         1.4         1.4         1.4         1.4
+  100   10 |         2.1         2.1         2.1         2.1         2.1
+  100   20 |         0.8         0.8         0.8         0.8         0.7
+  200   10 |         3.3         3.3         3.3         3.3         3.3
+  200   20 |         1.2         1.2         1.2         1.2         1.2
+  200   50 |         0.3         0.4         0.3         0.3         0.3
+  500   20 |         1.7         1.7         1.7         1.7         1.7
+  500   50 |         0.0         0.0         0.0         0.0         0.0
+  500  100 |         0.7         0.9         0.9         0.9         0.9
+ 1000   50 |         0.0         0.0         0.0         0.0         0.0
+ 1000  100 |         0.0         0.0         0.0         0.0         0.0
+
+=== CUSTO C = nós + lambda*fragmentação + evicções (prioridade 2): gap % vs LR+none ===
+ Pods  Nós |     MS+none MS+ls_first  MS+ls_best    MS+grasp     MS+milp
+------------------------------------------------------------------------
+   50   10 |      -32.9%      -47.1%      -47.2%      -47.2%      -56.2%
+  100   10 |      -24.7%      -33.2%      -34.0%      -34.0%      -58.2%
+  100   20 |      -38.6%      -53.1%      -52.8%      -52.7%      -65.6%
+  200   10 |      -17.2%      -22.4%      -23.7%      -23.7%      -41.6%
+  200   20 |      -22.0%      -29.6%      -31.1%      -31.1%      -59.8%
+  200   50 |      -39.2%      -51.3%      -54.5%      -53.7%      -66.0%
+  500   20 |      -14.6%      -17.7%      -17.7%      -17.7%      -36.1%
+  500   50 |      -25.9%      -35.3%      -34.8%      -33.5%      -60.4%
+  500  100 |      -39.7%      -51.5%      -52.5%      -52.0%      -66.3%
+ 1000   50 |      -21.2%      -22.8%      -22.5%      -22.8%      -41.7%
+ 1000  100 |      -26.4%      -34.7%      -34.9%      -34.9%      -55.4%
+
+=== CUSTO DE NÓS soma de c_i*x_i: gap % vs LR+none ===
+ Pods  Nós |     MS+none MS+ls_first  MS+ls_best    MS+grasp     MS+milp
+------------------------------------------------------------------------
+   50   10 |      -29.9%      -45.6%      -45.6%      -45.6%      -55.9%
+  100   10 |      -24.0%      -33.3%      -34.2%      -34.2%      -61.0%
+  100   20 |      -35.7%      -51.8%      -51.6%      -51.4%      -65.9%
+  200   10 |      -17.1%      -22.7%      -24.0%      -24.0%      -43.6%
+  200   20 |      -20.8%      -29.0%      -30.5%      -30.5%      -62.2%
+  200   50 |      -34.5%      -47.6%      -51.1%      -50.1%      -64.3%
+  500   20 |      -14.4%      -17.8%      -17.8%      -17.8%      -38.0%
+  500   50 |      -24.9%      -34.8%      -34.3%      -33.0%      -62.3%
+  500  100 |      -35.7%      -48.9%      -49.9%      -49.4%      -65.4%
+ 1000   50 |      -21.0%      -22.8%      -22.5%      -22.8%      -43.3%
+ 1000  100 |      -25.4%      -34.2%      -34.5%      -34.4%      -56.8%
+
+=== CUSTO DE FRAGMENTAÇÃO lambda*soma de c_i*F_i (média das seeds) ===
+ Pods  Nós |     MS+none MS+ls_first  MS+ls_best    MS+grasp     MS+milp
+------------------------------------------------------------------------
+   50   10 |       180.2       132.7       133.7       133.7        82.5
+  100   10 |        32.0        35.6        34.7        34.7        40.1
+  100   20 |       520.4       374.5       388.7       394.6       190.0
+  200   10 |         6.7         6.7         6.7         6.7         6.2
+  200   20 |        99.0        99.4       100.1       100.1       124.6
+  200   50 |      3993.5      2299.2      2184.6      2188.2      1066.1
+  500   20 |         6.5         6.5         6.5         6.5         6.3
+  500   50 |       424.1       399.8       398.9       412.2       439.8
+  500  100 |      9213.2      6711.4      6572.8      6644.0      3893.9
+ 1000   50 |        39.0        39.4        38.5        38.6        33.9
+ 1000  100 |      1043.3      1032.5      1034.4      1038.3      1070.7
+
+=== % DE CAPACIDADE FRAGMENTADA (média) ===
+ Pods  Nós |     MS+none MS+ls_first  MS+ls_best    MS+grasp     MS+milp
+------------------------------------------------------------------------
+   50   10 |         6.3         6.7         6.8         6.8         5.4
+  100   10 |         0.9         1.2         1.1         1.1         2.9
+  100   20 |         6.1         6.5         6.7         6.7         5.1
+  200   10 |         0.1         0.1         0.1         0.1         0.2
+  200   20 |         0.7         0.8         0.9         0.9         2.4
+  200   50 |         7.7         6.3         6.2         6.3         4.5
+  500   20 |         0.1         0.1         0.1         0.1         0.1
+  500   50 |         0.6         0.6         0.6         0.6         1.4
+  500  100 |         4.1         4.4         4.4         4.4         3.7
+ 1000   50 |         0.1         0.1         0.1         0.1         0.1
+ 1000  100 |         0.4         0.4         0.4         0.4         0.6
+
+=== UTILIZAÇÃO: requests alocados / capacidade ligada (média) ===
+ Pods  Nós |     MS+none MS+ls_first  MS+ls_best    MS+grasp     MS+milp
+------------------------------------------------------------------------
+   50   10 |       0.735       0.850       0.845       0.845       0.912
+  100   10 |       0.602       0.679       0.683       0.683       0.867
+  100   20 |       0.737       0.877       0.869       0.873       0.926
+  200   10 |       0.582       0.617       0.621       0.621       0.712
+  200   20 |       0.623       0.679       0.689       0.689       0.903
+  200   50 |       0.807       0.918       0.919       0.917       0.950
+  500   20 |       0.575       0.592       0.592       0.592       0.678
+  500   50 |       0.622       0.688       0.686       0.683       0.900
+  500  100 |       0.784       0.928       0.923       0.923       0.954
+ 1000   50 |       0.571       0.583       0.580       0.583       0.688
+ 1000  100 |       0.614       0.686       0.682       0.682       0.849
+
+=== EVICÇÕES totais (média das seeds) ===
+ Pods  Nós |     MS+none MS+ls_first  MS+ls_best    MS+grasp     MS+milp
+------------------------------------------------------------------------
+   50   10 |         0.0         8.8         7.5         7.5        20.3
+  100   10 |         0.0         4.1         4.3         4.3        21.2
+  100   20 |         0.0        15.7        15.1        15.1        39.3
+  200   10 |         0.0         3.0         3.0         3.0        16.1
+  200   20 |         0.0         6.6         7.2         7.2        40.7
+  200   50 |         0.0        36.8        34.0        31.9        74.0
+  500   20 |         0.0         3.7         3.7         3.7        33.1
+  500   50 |         0.0        16.0        15.6        14.9        89.7
+  500  100 |         0.0        59.0        53.2        53.8       123.4
+ 1000   50 |         0.0         7.2         7.3         7.0        71.3
+ 1000  100 |         0.0        33.4        33.3        32.7       149.7
+
+=== MIGRAÇÕES: pods do período anterior que mudaram de nó (média) ===
+ Pods  Nós |     MS+none MS+ls_first  MS+ls_best    MS+grasp     MS+milp
+------------------------------------------------------------------------
+   50   10 |         0.0         8.2         6.9         6.9        17.4
+  100   10 |         0.0         4.1         4.3         4.3        19.8
+  100   20 |         0.0        15.3        14.6        14.8        35.6
+  200   10 |         0.0         3.0         3.0         3.0        15.7
+  200   20 |         0.0         6.6         7.2         7.2        38.5
+  200   50 |         0.0        35.8        33.2        31.2        65.2
+  500   20 |         0.0         3.7         3.7         3.7        32.5
+  500   50 |         0.0        16.0        15.6        14.9        84.2
+  500  100 |         0.0        58.5        53.1        53.6       112.2
+ 1000   50 |         0.0         7.2         7.3         7.0        67.7
+ 1000  100 |         0.0        33.4        33.3        32.7       139.6
+
+=== TEMPO total em ms (média das seeds) ===
+ Pods  Nós |     MS+none MS+ls_first  MS+ls_best    MS+grasp     MS+milp
+------------------------------------------------------------------------
+   50   10 |        4246        4091        4055        4691        5235
+  100   10 |         525         611         666        1555        1782
+  100   20 |       35208       35034       35086       38530       41675
+  200   10 |         553         728         734        1913        1373
+  200   20 |        6415        6955        6874        9869       11990
+  200   50 |       62435       63952       63936       75727       93503
+  500   20 |        2743        3790        3561        8926        7004
+  500   50 |       63928       67376       67039       91190      102052
+  500  100 |       73144      685919      354287      988791     1752493
+ 1000   50 |       57156       62516       62594      102746       95202
+ 1000  100 |       71013       78637       81473      175897      208759
+
+AVISO: 619 execuções com pods Pending (reduzem a admissão; o pod é tentado de novo no período seguinte).
+
+=== TESTES ESTATÍSTICOS: IMPLANTÁVEIS (110 instâncias pareadas) ===
+Rank por instância: (maior admissão, menor custo). Wilcoxon: custo nas instâncias com admissão empatada.
+Friedman: chi2 = 935.5, p = 1.40e-195
+
+Configuração | rank médio | pares | Wilcoxon vs melhor (Holm)
+--------------------------------------------------------------------------
+     GR+milp |       1.00 |       | (melhor)
+    GR+grasp |       2.79 |   108 | p=1.68e-18 (diferença significativa)
+  GR+ls_best |       2.81 |   108 | p=1.68e-18 (diferença significativa)
+ GR+ls_first |       3.42 |   107 | p=1.91e-18 (diferença significativa)
+     GR+none |       5.02 |   106 | p=2.40e-18 (diferença significativa)
+  LR+ls_best |       7.40 |    35 | p=2.33e-10 (diferença significativa)
+    LR+grasp |       7.40 |    35 | p=2.33e-10 (diferença significativa)
+ LR+ls_first |       7.60 |    35 | p=2.33e-10 (diferença significativa)
+     LR+none |       7.98 |    35 | p=2.33e-10 (diferença significativa)
+     LR+milp |       9.57 |    36 | p=1.46e-10 (diferença significativa)
+
+=== TESTES ESTATÍSTICOS: TODAS, com a referência (Scheduler MILP) (110 instâncias pareadas) ===
+Rank por instância: (maior admissão, menor custo). Wilcoxon: custo nas instâncias com admissão empatada.
+Friedman: chi2 = 1331.7, p = 8.34e-276
+
+Configuração | rank médio | pares | Wilcoxon vs melhor (Holm)
+--------------------------------------------------------------------------
+     MS+milp |       1.46 |       | (melhor)
+     GR+milp |       2.56 |    82 | p=2.93e-02 (diferença significativa)
+  MS+ls_best |       5.08 |   108 | p=2.62e-18 (diferença significativa)
+    MS+grasp |       5.23 |   107 | p=3.28e-18 (diferença significativa)
+ MS+ls_first |       5.47 |   108 | p=2.62e-18 (diferença significativa)
+    GR+grasp |       5.64 |    82 | p=3.66e-14 (diferença significativa)
+  GR+ls_best |       5.67 |    82 | p=3.66e-14 (diferença significativa)
+ GR+ls_first |       6.50 |    82 | p=3.66e-14 (diferença significativa)
+     MS+none |       8.27 |   107 | p=3.28e-18 (diferença significativa)
+     GR+none |       9.15 |    82 | p=3.66e-14 (diferença significativa)
+  LR+ls_best |      12.40 |    35 | p=2.91e-10 (diferença significativa)
+    LR+grasp |      12.40 |    35 | p=2.91e-10 (diferença significativa)
+ LR+ls_first |      12.60 |    35 | p=2.91e-10 (diferença significativa)
+     LR+none |      12.98 |    35 | p=2.91e-10 (diferença significativa)
+     LR+milp |      14.57 |    36 | p=1.75e-10 (diferença significativa)
